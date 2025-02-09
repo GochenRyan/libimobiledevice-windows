@@ -49,6 +49,7 @@ jobs:
                                       -name "libimobiledevice*" -o \
                                       -name "libplist*" -o \
                                       -name "plistutil.exe" -o \
+                                      -name "afcclient.exe" -o \
                                       -name "libusbmuxd*" -o \
                                       -name "inetcat.exe" -o \
                                       -name "iproxy.exe" -o \
