@@ -29,6 +29,7 @@ jobs:
             autoconf
             automake
             make
+            zip
           update: true
 
       - name: Configure and Build
