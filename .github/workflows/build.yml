@@ -52,12 +52,8 @@ jobs:
                                       -name "libusbmuxd*" -o \
                                       -name "inetcat.exe" -o \
                                       -name "iproxy.exe" -o \
-                                      -name "libcurl*.dll" -o \
                                       -name "libtatsu*.dll" -o \
-                                      -name "libxml2*.dll" -o \
-                                      -name "libzip*.dll" -o \
                                       -name "zlib*.dll" -o \
-                                      -name "libreadline*.dll" -o \
                                       -name "libbrotli*.dll" -o \
                                       -name "libiconv*.dll" -o \
                                       -name "libunistring*.dll" -o \
@@ -66,12 +62,9 @@ jobs:
                                       -name "libidn*.dll" -o \
                                       -name "libnghttp*.dll" -o \
                                       -name "libpsl*.dll" -o \
-                                      -name "libbz2*.dll" -o \
-                                      -name "liblzma*.dll" -o \
                                       -name "libzstd*.dll" -o \
-                                      -name "libtermcap*.dll" -o \
                                       -name "libcrypto*.dll" -o \
                                       -name "libssl*.dll" \) \
                                       -exec cp -v {} rel \;
-          tar -C rel -cJvf libimobile-suite-latest_${{ matrix.arch }}-${{ matrix.msystem }}.tar.xz .
+          tar -C rel -cJvf libimobile-suite-latest_w64.tar.xz .
 
