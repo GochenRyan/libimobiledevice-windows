@@ -77,4 +77,5 @@ jobs:
           echo "Generated tag: $TAG"
           gh release create "$TAG" --draft --title "Draft Release"
           gh release upload "$TAG" libimobile-suite-latest_w64.tar.xz  
+        shell: bash
 
