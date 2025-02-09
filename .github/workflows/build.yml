@@ -70,7 +70,7 @@ jobs:
                                       -name "libcrypto*.dll" -o \
                                       -name "libssl*.dll" \) \
                                       -exec cp -v {} rel \;
-          tar -C rel -cJvf libimobile-suite-latest_w64.tar.xz .
+          cd rel && zip -r ../libimobile-suite-latest_w64.zip .
       - name: publish release
         env:
           github_token: ${{secrets.GITHUB_TOKEN}}
@@ -79,6 +79,6 @@ jobs:
           echo "TAG=$TAG" >> $GITHUB_ENV
           echo "Generated tag: $TAG"
           gh release create "$TAG" --draft --title "Draft Release"
-          gh release upload "$TAG" libimobile-suite-latest_w64.tar.xz  
+          gh release upload "$TAG" libimobile-suite-latest_w64.zip  
         shell: bash
 
