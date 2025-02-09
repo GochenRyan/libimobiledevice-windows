@@ -31,8 +31,16 @@ jobs:
       - name: Configure and Build
         shell: msys2 {0}
         run: |
-          ;
-
+          repos=("libplist" "libimobiledevice-glue" "libusbmuxd" "libtatsu" "libimobiledevice")
+          for repo in "${repos[@]}"; do
+            echo "Building $repo..."
+            git clone "https://github.com/libimobiledevice/$repo"
+            pushd "$repo" > /dev/null
+            ./autogen.sh
+            make -j$(nproc)
+            make install
+            popd > /dev/null
+          done
       - name: Test Executable
         shell: msys2 {0}
         run: |
