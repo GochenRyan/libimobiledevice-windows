@@ -32,7 +32,7 @@ jobs:
             automake
             make
             zip
-            libzip
+            mingw-w64-x86_64-libzip
           update: true
 
       - name: Configure and Build
@@ -72,6 +72,7 @@ jobs:
                                       -name "libpsl*.dll" -o \
                                       -name "libzstd*.dll" -o \
                                       -name "libcrypto*.dll" -o \
+                                      -name "*zip*.dll" -o \
                                       -name "libssl*.dll" \) \
                                       -exec cp -v {} rel \;
           cd rel && zip -r ../libimobile-suite-latest_w64.zip .
