@@ -32,6 +32,7 @@ jobs:
             automake
             make
             zip
+            libzip-dev
           update: true
 
       - name: Configure and Build
