@@ -73,6 +73,7 @@ jobs:
                                       -name "libzstd*.dll" -o \
                                       -name "libcrypto*.dll" -o \
                                       -name "*zip*.dll" -o \
+                                      -name "libbz*.dll" -o \
                                       -name "libssl*.dll" \) \
                                       -exec cp -v {} rel \;
           cd rel && zip -r ../libimobile-suite-latest_w64.zip .
