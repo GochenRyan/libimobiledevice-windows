@@ -38,7 +38,7 @@ jobs:
       - name: Configure and Build
         shell: msys2 {0}
         run: |
-          repos=("libplist" "libimobiledevice-glue" "libusbmuxd" "libtatsu" "libimobiledevice" "ideviceinstaller")
+          repos=("libplist" "libimobiledevice-glue" "libusbmuxd" "libtatsu" "libimobiledevice")
           for repo in "${repos[@]}"; do
             echo "Building $repo..."
             git clone "https://github.com/libimobiledevice/$repo"
@@ -48,6 +48,14 @@ jobs:
             make install
             popd > /dev/null
           done
+          repo="ideviceinstaller"
+          echo "Building $repo..."
+          git clone "https://github.com/GochenRyan/ideviceinstaller"
+          pushd "$repo" > /dev/null
+          ./autogen.sh
+          make -j$(nproc)
+          make install
+          popd > /dev/null
       - name: Release
         shell: msys2 {0}
         run: |
