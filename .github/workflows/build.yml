@@ -33,6 +33,7 @@ jobs:
             make
             zip
             mingw-w64-x86_64-libzip
+            mingw-w64-x86_64-zlib
           update: true
 
       - name: Configure and Build
